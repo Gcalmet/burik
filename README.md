@@ -1,5 +1,9 @@
 # Burik — A Typst Library for easy Rubik's Cube tutorials edition
 
+<p align="center">
+  <img src="./burik_f2lollpll.png" alt="Aperçu du tutoriel" />
+</p>
+
 ## Présentation
 
 **Burik** is a Typst library specifically designed to facilitate the creation of tutorials for **3x3 Rubik's Cube** solving.
