@@ -29,7 +29,7 @@ Moves used to encode an algorithm on the Rubik's Cube are the standard ones (vis
 - `f, b, r, l, u, d` for the 6 wide moves
 - `E, S, M` for the 3 slice moves
 - `x, y, z` for the 3 cube rotations
-  
+
 In each case, you can use  `', 2, 3, ` to indicate the number of turns.
 
 ## Algorithms
@@ -41,7 +41,7 @@ Algorithms come with tool functions that can be used to create new algorithms or
 - `conc(A, B)` returns `C` such that `C = A + B`
 
 - `invert(A)` returns `A'` such that `A + A' = " "`
-  
+
 - `enclose(A, B)` returns `C` such that `C = B + A + B'` (or `C + B = B + A`)
 
 - `simplify(A)` returns `A'` such that `A = A'` and that `A'`̀  has no useless moves
@@ -57,7 +57,7 @@ There are seven parametrizable colors in RGB hexadecimal code in `cubes.typ`
 - green :green_heart: for stickers from the `F` face
 - blue :blue_heart: for stickers from the `B` face
 - black :black_heart: for every non-colorized stickers
-  
+
 ## Cubes
 
 Cubes are dictionnaries with 6 keys `u, d, f, b, r, l` for the six faces, and each value is an array of 9 colors.
@@ -79,15 +79,15 @@ There are 3 drawing functions :
 - `draw_pattern` for drawing the 6 faces of the cube as the pattern of a cube (useful for debugging or scramble checking)
 
 - `draw_last_layer` for drawing the last layer with reduced stickers for the side pieces (useful for OLL, PLL and every last layer algorithm)
-  
+
 - `draw_3d_cube` for drawing the cube in perpective with a view on faces `F, U, R` (useful for F2L)
 
 And there also 3 illustrating functions :
 
 - `pll` to illustrate PLL algorithms, by default this is in the last face point of view, with yellow face on top, green in front, and starting with the `pll_cube` as the target configuration. You can choose to display black arrows on the yellow face to illustrate ongoing permutations.
-  
+
 - `oll` to illustrate OLL algorithms, by default this is in the last face point of view, with yellow face on top, green in front, and starting with the `oll_cube` as the target configuration.
-  
+
 - `f2l` to illustrate F2L algorithms, by default this is in the 3D view, with yellow face on top, green in front, and starting with the `f2l_cube` as the target configuration.
 
 ## License
