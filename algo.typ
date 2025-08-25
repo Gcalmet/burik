@@ -89,13 +89,13 @@
 
 #let find_permutation(cube)={
   let permut = ()
-  
-  let edges = ("U" : cube.u.at(7), "L" : cube.l.at(5), "R" : cube.r.at(3), "D" : cube.d.at(1)) 
 
-  let corners = ("LU" :  cube.l.at(2), "RU" : cube.u.at(8), "RD" : cube.r.at(6) , "LD" : cube.d.at(0)) 
+  let edges = ("U" : cube.u.at(7), "L" : cube.l.at(5), "R" : cube.r.at(3), "D" : cube.d.at(1))
+
+  let corners = ("LU" :  cube.l.at(2), "RU" : cube.u.at(8), "RD" : cube.r.at(6) , "LD" : cube.d.at(0))
 
   let centers = ("U" : cube.u.at(4), "L" : cube.l.at(4), "R" : cube.r.at(4), "D" : cube.d.at(4), "LU" : cube.l.at(4), "RU" : cube.u.at(4), "RD" : cube.r.at(4), "LD":cube.d.at(4))
-  
+
   for (edge1, color1) in edges.pairs() {
     for (edge2, color2) in edges.pairs() {
       if color1 == centers.at(edge2) and edge1 != edge2{
@@ -111,6 +111,6 @@
       }
     }
   }
-  
+
   permut
 }

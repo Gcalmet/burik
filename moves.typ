@@ -1,12 +1,12 @@
 #let x = ((u, d, f, b, r, l)) => (
-  u : (f.at(0), f.at(1), f.at(2),  
+  u : (f.at(0), f.at(1), f.at(2),
    f.at(3), f.at(4), f.at(5),
    f.at(6), f.at(7), f.at(8)),
-  
+
   d : (b.at(8), b.at(7), b.at(6),
    b.at(5), b.at(4), b.at(3),
    b.at(2), b.at(1), b.at(0)),
-  
+
   f : (d.at(0), d.at(1), d.at(2),
    d.at(3), d.at(4), d.at(5),
    d.at(6), d.at(7), d.at(8)),
@@ -15,11 +15,11 @@
    u.at(5), u.at(4), u.at(3),
    u.at(2), u.at(1), u.at(0)),
 
-  r : (r.at(6), r.at(3), r.at(0),  
+  r : (r.at(6), r.at(3), r.at(0),
    r.at(7), r.at(4), r.at(1),
    r.at(8), r.at(5), r.at(2)),
 
-  l : (l.at(2), l.at(5), l.at(8),  
+  l : (l.at(2), l.at(5), l.at(8),
    l.at(1), l.at(4), l.at(7),
    l.at(0), l.at(3), l.at(6))
 )
@@ -31,11 +31,11 @@
   u : (u.at(6), u.at(3), u.at(0),
    u.at(7), u.at(4), u.at(1),
    u.at(8), u.at(5), u.at(2)),
-  
+
   d : (d.at(2), d.at(5), d.at(8),
    d.at(1), d.at(4), d.at(7),
    d.at(0), d.at(3), d.at(6)),
-  
+
   f : (r.at(0), r.at(1), r.at(2),
    r.at(3), r.at(4), r.at(5),
    r.at(6), r.at(7), r.at(8)),
@@ -44,11 +44,11 @@
    l.at(3), l.at(4), l.at(5),
    l.at(6), l.at(7), l.at(8)),
 
-  r : (b.at(0), b.at(1), b.at(2),  
+  r : (b.at(0), b.at(1), b.at(2),
    b.at(3), b.at(4), b.at(5),
    b.at(6), b.at(7), b.at(8)),
 
-  l : (f.at(0), f.at(1), f.at(2),  
+  l : (f.at(0), f.at(1), f.at(2),
    f.at(3), f.at(4), f.at(5),
    f.at(6), f.at(7), f.at(8))
 )
@@ -65,11 +65,11 @@
   u : (u.at(6), u.at(3), u.at(0),
    u.at(7), u.at(4), u.at(1),
    u.at(8), u.at(5), u.at(2)),
-  
+
   d : (d.at(0), d.at(1), d.at(2),
    d.at(3), d.at(4), d.at(5),
    d.at(6), d.at(7), d.at(8)),
-  
+
   f : (r.at(0), r.at(1), r.at(2),
    f.at(3), f.at(4), f.at(5),
    f.at(6), f.at(7), f.at(8)),
@@ -78,11 +78,11 @@
    b.at(3), b.at(4), b.at(5),
    b.at(6), b.at(7), b.at(8)),
 
-  r : (b.at(0), b.at(1), b.at(2),  
+  r : (b.at(0), b.at(1), b.at(2),
    r.at(3), r.at(4), r.at(5),
    r.at(6), r.at(7), r.at(8)),
 
-  l : (f.at(0), f.at(1), f.at(2),  
+  l : (f.at(0), f.at(1), f.at(2),
    l.at(3), l.at(4), l.at(5),
    l.at(6), l.at(7), l.at(8))
 )
@@ -161,7 +161,7 @@
   else if move == "z" {z(cube)}
   else if move == "z'" {z3(cube)}
   else if move == "z2" {z2(cube)}
-  
+
   else if move == "R"  {R(cube)}
   else if move == "R'" {R3(cube)}
   else if move == "R2" {R2(cube)}
