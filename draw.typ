@@ -62,8 +62,8 @@
         stroke: black,
         radius: radius
         )
-    } 
-  } else {  
+    }
+  } else {
   for row in range(3) {
     for col in range(3) {
       let index_face = 3*row + col
@@ -170,7 +170,7 @@
 #let draw_tile(p1, p2, p3, p4, color) = {
   draw.merge-path({
     line(p1, p2, p3, p4, p1)
-  }, 
+  },
   fill: color,
   stroke: black,)
 }
@@ -204,22 +204,22 @@
 
 
 #let oll = (algo, prealgo:"x2 y2", postalgo:"x'") =>{
-  
+
   let premoves = prealgo.split(" ")
   let inverted_premoves = invert_algo(premoves)
-  
+
   let postmoves = postalgo.split(" ")
 
   let algo = simplify(algo)
   let moves = algo.split(" ")
   let inverted_moves = invert_algo(moves)
-  
+
   let initial_cube = apply_sequence(oll_cube, premoves)
   let cube_after_algo = apply_sequence(initial_cube, inverted_moves)
   let cube_ready_to_display = apply_sequence(cube_after_algo, postmoves)
   let cube_ready_to_assert = apply_sequence(cube_after_algo, inverted_premoves)
 
-  assert(assert_oll(cube_ready_to_assert), message: "The cube is not is a valid state after the algorithm")
+  assert(assert_oll(cube_ready_to_assert), message: "The cube is not in a valid state after the algorithm")
 
   box(width:5cm)[
     #set align(center)
@@ -230,21 +230,22 @@
 }
 
 #let pll = (algo, prealgo:"x2 y2", postalgo:"x'") =>{
-  
-  let premoves = prealgo.split(" ")  
+
+  let premoves = prealgo.split(" ")
   let postmoves = postalgo.split(" ")
   let inverted_premoves = invert_algo(premoves)
 
   let algo = simplify(algo)
   let moves = algo.split(" ")
   let inverted_moves = invert_algo(moves)
-  
+
   let initial_cube = apply_sequence(pll_cube, premoves)
   let cube_after_algo = apply_sequence(initial_cube, inverted_moves)
   let cube_ready_to_display = apply_sequence(cube_after_algo, postmoves)
   let cube_ready_to_assert = apply_sequence(cube_after_algo, inverted_premoves)
   
-  assert(assert_pll(cube_ready_to_assert), message: "The cube is not is a valid state after the algorithm")
+  assert(assert_pll(cube_ready_to_assert), message: "The cube is not in a valid state after the algorithm")
+  
   box(width:5cm)[
     #set align(center)
     #canvas(draw_last_layer(cube_ready_to_display, arrows:true))
@@ -255,15 +256,15 @@
 }
 
 #let f2l = (algo, prealgo:"x2 y2") =>{
-  let premoves = prealgo.split(" ")  
+  let premoves = prealgo.split(" ")
   let inverted_premoves = invert_algo(premoves)
 
   let moves = algo.split(" ")
   let inverted_moves = invert_algo(moves)
-  
+
   let initial_cube = apply_sequence(f2l_cube, premoves)
   let cube_ready_to_display = apply_sequence(initial_cube, inverted_moves)
-  
+
   box(width:5cm)[
     #set align(center)
     #canvas(draw_3d_cube(cube_ready_to_display, 0.7cm, 0cm))
