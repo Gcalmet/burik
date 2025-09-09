@@ -123,7 +123,7 @@
 #let f2 = (cube) => f(f(cube))
 #let f3 = (cube) => f(f(f(cube)))
 
-#let b = (cube) => U(z(cube))
+#let b = (cube) => F(z3(cube))
 #let b2 = (cube) => b(b(cube))
 #let b3 = (cube) => b(b(b(cube)))
 
@@ -136,15 +136,15 @@
 #let d3 = (cube) => d(d(d(cube)))
 
 
-#let M = (cube) => R3(L(x(cube)))
+#let M = (cube) => R(L3(x3(cube)))
 #let M2 = (cube) => M(M(cube))
 #let M3 = (cube) => M(M(M(cube)))
 
-#let E = (cube) => y(U3(D(cube)))
+#let E = (cube) => D3(U(y3(cube)))
 #let E2 = (cube) => E(E(cube))
 #let E3 = (cube) => E(E(E(cube)))
 
-#let S = (cube) => z(F3(B(cube)))
+#let S = (cube) => F3(B(z(cube)))
 #let S2 = (cube) => S(S(cube))
 #let S3 = (cube) => S(S(S(cube)))
 

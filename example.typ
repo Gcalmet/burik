@@ -1,7 +1,8 @@
 #import "draw.typ": *
 #import "cubes.typ": *
-#set text(size: 16pt)
 
+#set text(size: 16pt)
+#set document(date: none)
 #set page(columns: 3)
 
 #pll("M2 U' M2 U2 M2 U' M2")
@@ -35,8 +36,9 @@
 #let anti-sledgehammer = invert(sledgehammer)
 
 #let fat-sune = "r U R' U R U2 r'"
-#let fat-anti-sune = invert(fat-sune)
 
+#let H = "R U R' U' M' U R U' r'"
+#let big-fish = "r U R' U' M U R U' R'"
 
 //#align(center)[*sune*]
 #oll(sune)
@@ -54,8 +56,9 @@
 
 #oll(conc(anti-sexy, anti-sledgehammer))
 #oll(conc(sledgehammer, sexy))
-#oll(fat-sune)
-#oll(fat-anti-sune)
+
+#oll(H)
+#oll(big-fish)
 
 #pagebreak()
 
