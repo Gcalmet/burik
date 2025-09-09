@@ -219,7 +219,7 @@
   let cube_ready_to_display = apply_sequence(cube_after_algo, postmoves)
   let cube_ready_to_assert = apply_sequence(cube_after_algo, inverted_premoves)
 
-  assert(assert_oll(cube_ready_to_assert), message: "The cube is not is an valid state after the algorithm")
+  assert(assert_oll(cube_ready_to_assert), message: "The cube is not is a valid state after the algorithm")
 
   box(width:5cm)[
     #set align(center)
@@ -244,7 +244,7 @@
   let cube_ready_to_display = apply_sequence(cube_after_algo, postmoves)
   let cube_ready_to_assert = apply_sequence(cube_after_algo, inverted_premoves)
   
-  assert(assert_pll(cube_ready_to_assert), message: "The cube is not is an valid state after the algorithm")
+  assert(assert_pll(cube_ready_to_assert), message: "The cube is not is a valid state after the algorithm")
   box(width:5cm)[
     #set align(center)
     #canvas(draw_last_layer(cube_ready_to_display, arrows:true))
