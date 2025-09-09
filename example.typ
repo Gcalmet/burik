@@ -73,3 +73,16 @@
 #f2l("r' U' R U M")
 
 
+#pagebreak()
+
+#f2l("f R' f'")
+
+#colbreak()
+
+#oll(fat-sune)
+
+#colbreak()
+
+#pll("R' U R' U' R3 U' R' U R U R2")
+
+#f2l(simplify("R' R' R'"))
