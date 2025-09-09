@@ -134,18 +134,16 @@
 }
 
 #let draw_3d_corner(cube, origin: (x: 0cm, y: 0cm), size: 1cm) = {
-  // Vecteurs isométriques
   let dx = size * 0.866  // cos(30°)
   let dy = size * 0.5    // sin(30°)
 
-  // Dessiner les 9 facettes de chaque face
   for row in range(3) {
     for col in range(3) {
       let i = 3 * row + col
       let f_col = origin.x + col * size
       let f_row = origin.y - row * size
 
-      // Face F (front) — parallèle à l'écran
+      // Face F (front)
       draw.rect(
         (f_col, f_row),
         (f_col + size, f_row - size),
@@ -153,12 +151,12 @@
         stroke: black
       )
 
-      // Face U (top) — inclinaison isométrique vers le haut
+      // Face U (top)
       let ux = origin.x + col * dx + row * (-dy)
       let uy = origin.y + col * dy + row * (-dx)
       draw_tile(ux, uy, dx, dy, cube.u.at(i))
 
-      // Face R (right) — inclinaison isométrique vers la droite
+      // Face R (right)
       let rx = origin.x + 3 * size + col * (-dy) + row * dx
       let ry = origin.y - col * dx + row * (-dy)
       draw_tile(rx, ry, dy, dx, cube.r.at(i))
@@ -182,7 +180,6 @@
       let x = origin.x +  col * (size + spacing) * vvec.at(0) +  row * (size + spacing) * hvec.at(0)
       let y = origin.y +  col * (size + spacing) * vvec.at(1) +  row * (size + spacing) * hvec.at(1)
 
-      // Calcule les coins de la tile dans le repère local
       let p1 = (x, y)
       let p2 = (x + size * vvec.at(0), y+ size* vvec.at(1))
       let p3 = (x + size * vvec.at(0) + size * hvec.at(0), y+ size * vvec.at(1) + size * hvec.at(1))
@@ -265,6 +262,53 @@
   let initial_cube = apply_sequence(f2l_cube, premoves)
   let cube_ready_to_display = apply_sequence(initial_cube, inverted_moves)
 
+  box(width:5cm)[
+    #set align(center)
+    #canvas(draw_3d_cube(cube_ready_to_display, 0.7cm, 0cm))
+    #box(width:4cm)[
+    #raw(algo)]
+    #v(1cm)
+  ]
+}
+
+#let coll = (algo, prealgo:"x2 y2", postalgo:"x'") =>{
+  
+  let premoves = prealgo.split(" ")
+  let inverted_premoves = invert_algo(premoves)
+  
+  let postmoves = postalgo.split(" ")
+
+  let algo = simplify(algo)
+  let moves = algo.split(" ")
+  let inverted_moves = invert_algo(moves)
+  
+  let initial_cube = apply_sequence(coll_cube, premoves)
+  let cube_after_algo = apply_sequence(initial_cube, inverted_moves)
+  let cube_ready_to_display = apply_sequence(cube_after_algo, postmoves)
+  let cube_ready_to_assert = apply_sequence(cube_after_algo, inverted_premoves)
+
+  assert(assert_oll(cube_ready_to_assert), message: "The cube is not in a valid state after the algorithm")
+
+  box(width:5cm)[
+    #set align(center)
+    #canvas(draw_last_layer(cube_ready_to_display))
+    #box(width:4cm)[
+    #raw(algo)]
+    #v(1cm)
+  ]
+}
+
+#let ols = (algo, prealgo:"x2 y2") =>{
+  let premoves = prealgo.split(" ")  
+  let inverted_premoves = invert_algo(premoves)
+
+  let algo = simplify(algo)
+  let moves = algo.split(" ")
+  let inverted_moves = invert_algo(moves)
+  
+  let initial_cube = apply_sequence(oll_cube, premoves)
+  let cube_ready_to_display = apply_sequence(initial_cube, inverted_moves)
+  
   box(width:5cm)[
     #set align(center)
     #canvas(draw_3d_cube(cube_ready_to_display, 0.7cm, 0cm))

@@ -29,6 +29,27 @@
           colors.orange, colors.orange, colors.orange)
 )
 
+#let cross_cube = (
+  u : (colors.white, colors.white, colors.white,
+        colors.white, colors.white, colors.white,
+        colors.white, colors.white, colors.white),
+  d : (colors.grey, colors.yellow, colors.grey,
+          colors.yellow, colors.yellow, colors.yellow,
+          colors.grey, colors.yellow, colors.grey),
+  f : (colors.green, colors.green, colors.green,
+          colors.green, colors.green, colors.green,
+          colors.grey, colors.grey, colors.grey),
+  b : (colors.blue, colors.blue, colors.blue,
+          colors.blue, colors.blue, colors.blue,
+          colors.grey, colors.grey, colors.grey),
+  r : (colors.red, colors.red, colors.red,
+          colors.red, colors.red, colors.red,
+          colors.grey, colors.grey, colors.grey),
+  l : (colors.orange, colors.orange, colors.orange,
+          colors.orange, colors.orange, colors.orange,
+          colors.grey, colors.grey, colors.grey),
+)
+
 #let oll_cube = (
   u : (colors.white, colors.white, colors.white,
         colors.white, colors.white, colors.white,
@@ -69,4 +90,25 @@
   l : (colors.orange, colors.orange, colors.orange,
           colors.orange, colors.orange, colors.orange,
           colors.grey, colors.grey, colors.grey),
+)
+
+#let coll_cube = (
+  u : (colors.white, colors.white, colors.white,
+        colors.white, colors.white, colors.white,
+        colors.white, colors.white, colors.white),
+  d : (colors.yellow, colors.yellow, colors.yellow,
+          colors.yellow, colors.yellow, colors.yellow,
+          colors.yellow, colors.yellow, colors.yellow),
+  f : (colors.green, colors.green, colors.green,
+          colors.green, colors.green, colors.green,
+          colors.green, colors.grey, colors.green),
+  b : (colors.blue, colors.blue, colors.blue,
+          colors.blue, colors.blue, colors.blue,
+          colors.blue, colors.grey, colors.blue),
+  r : (colors.red, colors.red, colors.red,
+          colors.red, colors.red, colors.red,
+          colors.red, colors.grey, colors.red),
+  l : (colors.orange, colors.orange, colors.orange,
+          colors.orange, colors.orange, colors.orange,
+          colors.orange, colors.grey, colors.orange)
 )

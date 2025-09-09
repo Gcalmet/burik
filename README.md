@@ -4,7 +4,7 @@
   <img src="./burik_f2lollpll.png" alt="Aperçu du tutoriel" />
 </p>
 
-## Présentation
+## Presentation
 
 **Burik** is a Typst library specifically designed to facilitate the creation of tutorials for **3x3 Rubik's Cube** solving.
 
@@ -15,7 +15,7 @@ There is also an interest for the tutorial's user as there is no possible mismat
 ## Installation
 
 You can install Burik by cloning this repository and import it as suggested in `example.typ`.
-You can't find Burik on Typst universe for the moment.
+You can also find Burik on Typst universe : [burik](https://typst.app/universe/package/burik/).
 
 ## How it works ?
 
@@ -62,13 +62,17 @@ There are seven parametrizable colors in RGB hexadecimal code in `cubes.typ`
 
 Cubes are dictionnaries with 6 keys `u, d, f, b, r, l` for the six faces, and each value is an array of 9 colors.
 
-There are 3 predefined cubes in `cubes.typ` and they all have white on top and green in front :
+There are 5 predefined cubes in `cubes.typ` and they all have white on top and green in front :
 
 - `pll_cube` is a fully solved cube
 
 - `oll_cube` has solved white face, two first layers and yellow face (black stickers on the last layer permutation)
 
 - `f2l_cube` has solved white face and two first layers. The last layer  and the yellow face is in black.
+
+- `cross_cube` has solved white face, two first layers and yellow cross.
+
+- `coll_cube` is fully solved except for non-yellow stickers of edge pieces in yellow face.
 
 There is no assertion that the cubes that you may create from scrath using the same method are solvable, so you must be careful when doing so. I would recommend using the predefined cubes as much as possible.
 
@@ -90,6 +94,10 @@ And there also 3 illustrating functions :
 
 - `f2l` to illustrate F2L algorithms, by default this is in the 3D view, with yellow face on top, green in front, and starting with the `f2l_cube` as the target configuration.
 
+- `coll` to illustrate COLL algorithms, by default this is in the last face point of view, with yellow face on top, green in front, and starting with the `coll_cube` as the target configuration.
+
+- `ols` to illustrate VLS or HLS algorithms, by default this is in the 3D view, with yellow face on top, green in front, and starting with the `oll_cube` as the target configuration (same drawing function for Winter Variation).
+  
 ## License
 
 This project is licensed under the MIT License. You can find the full text in the `LICENSE` file included in this repository.

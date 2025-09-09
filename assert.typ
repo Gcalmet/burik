@@ -1,12 +1,12 @@
 #import "algo.typ":*
 
 #let two_top_layers = (face) => {
-    let c = face.at(4)  // couleur du centre
+    let c = face.at(4)  // color of the center
     face.at(0) == c and face.at(1) == c and face.at(2) == c and face.at(3) == c and face.at(4) == c and face.at(5) == c
 }
 
 #let cross = (face) => {
-    let c = face[4]  // couleur du centre
+    let c = face[4]  // color of the center
     face[1] == c and face[3] == c and face[5] == c and face[7] == c
 }
 
